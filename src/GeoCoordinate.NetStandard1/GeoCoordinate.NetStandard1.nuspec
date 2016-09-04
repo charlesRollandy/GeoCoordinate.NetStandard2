@@ -1,17 +1,17 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>GeoCoordinate.NetCore</id>
-    <version>1.0.0.1</version>
-    <title>GeoCoordinate.NetCore</title>
-    <authors>cormaltes</authors>
-    <projectUrl>https://github.com/cormaltes/GPSOAuthSharp</projectUrl>
+    <id>GeoCoordinate.NetStandard1</id>
+    <version>1.0.0.0</version>
+    <title>GeoCoordinate.NetStandard1</title>
+    <authors>AeonLucid</authors>
+    <projectUrl>https://github.com/AeonLucid/geocoordinate</projectUrl>
     <iconUrl>http://go.microsoft.com/fwlink/?LinkID=288859</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>.NetCore forked from https://github.com/ghuntley/geocoordinate -  implementation of System.Device.Location.GeoCoordinate. It is an exact 1:1 API compliant implementation and will be supported until MSFT sees it fit to embed the type. Which at that point this implementation will cease development/support and you will be able to simply remove this package and everything will still work.</description>
     <tags>GeoCoordinate,system.device.location.geocoordinate,netstandard</tags>
   </metadata>
   <files>
-    <file src="lib\" target="lib" />
+    <file src="bin\Debug\" target="lib" />
   </files>
 </package>

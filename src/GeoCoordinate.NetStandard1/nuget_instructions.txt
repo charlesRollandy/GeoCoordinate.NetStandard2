@@ -1,0 +1,5 @@
+# With .pdb
+nuget pack Package.nuspec -Symbol -Verbosity Detailed
+
+#Without .pdb
+nuget pack Package.nuspec -Verbosity Detailed
