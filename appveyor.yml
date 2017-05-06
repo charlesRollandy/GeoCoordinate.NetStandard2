@@ -1,14 +1,25 @@
+branches:
+  only:
+  - master
 
-init:
-  - git config --global core.autocrlf input
+assembly_info:
+  patch: false
+
+configuration: Release
+
+platform: Any CPU
+  
+environment:
+  DOTNET_CLI_TELEMETRY_OPTOUT: 1
+  
+before_build:
+  - appveyor-retry dotnet restore -v Minimal
+
 build_script:
-  - cmd: build.cmd BuildApp
-#  - cmd: build.cmd UnitTests
-  - cmd: build.cmd CreatePackages
-#test: off
-nuget:
-  account_feed: true
-  project_feed: true
+  - dotnet build "src\GeoCoordinate.NetStandard1" -c %CONFIGURATION% --no-dependencies
+  
+after_build:
+  - dotnet pack "src\GeoCoordinate.NetStandard1" -c %CONFIGURATION% --no-build -o artifacts
+  
 artifacts:
-- path: 'packaging\*.nupkg'
-  name: GeoCoordinatePackages
+  - path: src\GeoCoordinate.NetStandard1\artifacts\*.nupkg
