@@ -13,7 +13,7 @@ environment:
   DOTNET_CLI_TELEMETRY_OPTOUT: 1
   
 before_build:
-  - appveyor-retry dotnet restore -v Minimal
+  - dotnet restore "src\GeoCoordinate.NetStandard1" -v Minimal
 
 build_script:
   - dotnet build "src\GeoCoordinate.NetStandard1" -c %CONFIGURATION% --no-dependencies
