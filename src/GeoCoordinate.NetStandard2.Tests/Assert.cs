@@ -1,6 +1,7 @@
 ﻿using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace GeoCoordinatePortableTests.Assertations
+namespace GeoCoordinate.NetStandard2.Tests
 {
     public static class Assert
     {
@@ -18,7 +19,7 @@ namespace GeoCoordinatePortableTests.Assertations
                 throw;
             }
 
-            throw new Microsoft.VisualStudio.TestTools.UnitTesting.AssertFailedException("Expected to throw " + typeof(T).Name + ".");
+            throw new AssertFailedException("Expected to throw " + typeof(T).Name + ".");
         }
     }
 }

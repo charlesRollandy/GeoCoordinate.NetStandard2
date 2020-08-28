@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26403.7
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30204.135
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{4DB8F23A-14DF-429C-88F4-7FD3B21FFDD8}"
 	ProjectSection(SolutionItems) = preProject
@@ -19,11 +19,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		SolutionInfo.cs = SolutionInfo.cs
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeoCoordinatePortable", "GeoCoordinatePortable\GeoCoordinatePortable.csproj", "{3F8D76E7-1AF6-40F5-960F-13C4DFA80935}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeoCoordinate.NetStandard2", "GeoCoordinate.NetStandard2\GeoCoordinate.NetStandard2.csproj", "{76FB3451-E076-4C0F-AA73-44403E12CD84}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeoCoordinatePortableTests", "GeoCoordinatePortableTests\GeoCoordinatePortableTests.csproj", "{DA4A4A8E-A3AE-4630-AE81-3F944E407532}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeoCoordinate.NetStandard1", "GeoCoordinate.NetStandard1\GeoCoordinate.NetStandard1.csproj", "{76FB3451-E076-4C0F-AA73-44403E12CD84}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeoCoordinate.NetStandard2.Tests", "GeoCoordinate.NetStandard2.Tests\GeoCoordinate.NetStandard2.Tests.csproj", "{D6BABAC2-0EEC-40E4-9BCA-782C4571E8CE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,20 +29,19 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3F8D76E7-1AF6-40F5-960F-13C4DFA80935}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3F8D76E7-1AF6-40F5-960F-13C4DFA80935}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3F8D76E7-1AF6-40F5-960F-13C4DFA80935}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3F8D76E7-1AF6-40F5-960F-13C4DFA80935}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DA4A4A8E-A3AE-4630-AE81-3F944E407532}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DA4A4A8E-A3AE-4630-AE81-3F944E407532}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DA4A4A8E-A3AE-4630-AE81-3F944E407532}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DA4A4A8E-A3AE-4630-AE81-3F944E407532}.Release|Any CPU.Build.0 = Release|Any CPU
 		{76FB3451-E076-4C0F-AA73-44403E12CD84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{76FB3451-E076-4C0F-AA73-44403E12CD84}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{76FB3451-E076-4C0F-AA73-44403E12CD84}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{76FB3451-E076-4C0F-AA73-44403E12CD84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6BABAC2-0EEC-40E4-9BCA-782C4571E8CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6BABAC2-0EEC-40E4-9BCA-782C4571E8CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6BABAC2-0EEC-40E4-9BCA-782C4571E8CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6BABAC2-0EEC-40E4-9BCA-782C4571E8CE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F7465B19-9CA3-45AF-A5D8-7C7C155D852B}
 	EndGlobalSection
 EndGlobal

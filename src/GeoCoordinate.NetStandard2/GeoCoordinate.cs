@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Globalization;
 
-namespace GeoCoordinatePortable
+namespace GeoCoordinate.NetStandard2
 {
     /// <summary>
     /// Represents a geographical location that is determined by latitude and longitude

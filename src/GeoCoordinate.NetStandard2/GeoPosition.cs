@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace GeoCoordinatePortable
+namespace GeoCoordinate.NetStandard2
 {
     /// <summary>
     /// Contains location data of a type specified by the type parameter of the <see cref="GeoPosition{T}"/> class
