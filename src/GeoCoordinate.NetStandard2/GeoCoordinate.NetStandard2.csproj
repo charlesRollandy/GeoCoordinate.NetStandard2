@@ -3,17 +3,18 @@
   <PropertyGroup>
     <Description>Implementation of System.Device.Location.GeoCoordinate. It is an exact 1:1 API compliant implementation and will be supported until MSFT sees it fit to embed the type. Which at that point this implementation will cease development/support and you will be able to simply remove this package and everything will still work.</Description>
     <AssemblyTitle>GeoCoordinate.NetStandard1</AssemblyTitle>
-    <Authors>AeonLucid</Authors>
+    <Authors>CharlesRollandy</Authors>
     <TargetFramework>netstandard2.1</TargetFramework>
     <AssemblyName>GeoCoordinate.NetStandard2</AssemblyName>
-    <PackageId>GeoCoordinate.NetStandard1</PackageId>
+    <PackageId>GeoCoordinate.NetStandard2</PackageId>
     <PackageTags>GeoCoordinate;system.device.location.geocoordinate;netstandard</PackageTags>
-    <PackageIconUrl>http://i.imgur.com/sIso99f.jpg</PackageIconUrl>
-    <PackageProjectUrl>https://github.com/AeonLucid/GeoCoordinate.NetStandard1</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/charlesRollandy/GeoCoordinate.NetStandard2</PackageProjectUrl>
     <RepositoryType>git</RepositoryType>
-    <RepositoryUrl>https://github.com/AeonLucid/GeoCoordinate.NetStandard1</RepositoryUrl>
-    <Version>1.0.0</Version>
+    <RepositoryUrl>https://github.com/charlesRollandy/GeoCoordinate.NetStandard2</RepositoryUrl>
+    <Version>1.0.1</Version>
     <RootNamespace>GeoCoordinate.NetStandard2</RootNamespace>
+    <Company>CharlesRollandyCharlesRollandy</Company>
+    <AssemblyVersion>1.0.1.0</AssemblyVersion>
   </PropertyGroup>
 
 </Project>
