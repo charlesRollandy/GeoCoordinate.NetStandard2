@@ -6,12 +6,12 @@ GeoCoordinate is a Portable Class Library compatible implementation of System.De
 
 # Supported Platforms
 
-* .NET Standard 1.0
+* .NET Standard 2.1
 
 # Installation
 Installation is done via NuGet:
 
-    PM> Install-Package GeoCoordinate.NetStandard1
+    PM> Install-Package GeoCoordinate.NetStandard2
     
 # Usage
 
@@ -21,6 +21,3 @@ Installation is done via NuGet:
     double distanceBetween = pin1.GetDistanceTo(pin2);
 
 For more examples, refer to the MSDN reference documentation over at: https://msdn.microsoft.com/en-us/library/system.device.location.geocoordinate(v=vs.110).aspx
-
-# With thanks to
-* The icon "[Map Marker](https://thenounproject.com/term/map-marker/60112)" designed by [julianne](https://thenounproject.com/janne232) from The Noun Project.

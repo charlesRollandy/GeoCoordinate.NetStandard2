@@ -13,13 +13,13 @@ environment:
   DOTNET_CLI_TELEMETRY_OPTOUT: 1
   
 before_build:
-  - dotnet restore "src\GeoCoordinate.NetStandard1" -v Minimal
+  - dotnet restore "src\GeoCoordinate.NetStandard2" -v Minimal
 
 build_script:
-  - dotnet build "src\GeoCoordinate.NetStandard1" -c %CONFIGURATION% --no-dependencies
+  - dotnet build "src\GeoCoordinate.NetStandard2" -c %CONFIGURATION% --no-dependencies
   
 after_build:
-  - dotnet pack "src\GeoCoordinate.NetStandard1" -c %CONFIGURATION% --no-build -o artifacts
+  - dotnet pack "src\GeoCoordinate.NetStandard2" -c %CONFIGURATION% --no-build -o artifacts
   
 artifacts:
-  - path: src\GeoCoordinate.NetStandard1\artifacts\*.nupkg
+  - path: src\GeoCoordinate.NetStandard2\artifacts\*.nupkg

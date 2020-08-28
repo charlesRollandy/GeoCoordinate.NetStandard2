@@ -7,15 +7,15 @@ open SourceLink
 let authors = ["Geoffrey Huntley"]
 
 // project name and description
-let projectName = "GeoCoordinate"
-let projectDescription = "GeoCoordinate is a Portable Class Library compatible implementation of System.Device.Location.GeoCoordinate. It is an exact 1:1 API compliant implementation and will be supported until MSFT sees it fit to embed the type. Which at that point this implementation will cease development/support and you will be able to simply remove this package and everything will still work."
+let projectName = "GeoCoordinate.NetStandard2"
+let projectDescription = "GeoCoordinate is a :Net Standard 2.1 compatible implementation of System.Device.Location.GeoCoordinate. It is an exact 1:1 API compliant implementation and will be supported until MSFT sees it fit to embed the type. Which at that point this implementation will cease development/support and you will be able to simply remove this package and everything will still work."
 let projectSummary = projectDescription
 
 // directories
-let buildDir = "./src/GeoCoordinatePortable/bin"
+let buildDir = "./src/GeoCoordinate.NetStandard2/bin"
 let testResultsDir = "./testresults"
 let packagingRoot = "./packaging/"
-let packagingDir = packagingRoot @@ "GeoCoordinatePortable"
+let packagingDir = packagingRoot @@ "GeoCoordinate.NetStandard2"
 
 let releaseNotes = 
     ReadFile "RELEASENOTES.md"
@@ -44,14 +44,14 @@ Target "AssemblyInfo" (fun _ ->
 )
 
 Target "CheckProjects" (fun _ ->
-    !! "./src/GeoCoordinatePortable/GeoCoordinatePortable*.csproj"
-    |> Fake.MSBuild.ProjectSystem.CompareProjectsTo "./src/GeoCoordinatePortable/GeoCoordinatePortable.csproj"
+    !! "./src/GeoCoordinate.NetStandard2/GeoCoordinate.NetStandard2*.csproj"
+    |> Fake.MSBuild.ProjectSystem.CompareProjectsTo "./src/GeoCoordinate.NetStandard2/GeoCoordinate.NetStandard2.csproj"
 )
 
 
 Target "FixProjects" (fun _ ->
-    !! "./src/GeoCoordinatePortable/GeoCoordinatePortable*.csproj"
-    |> Fake.MSBuild.ProjectSystem.FixProjectFiles "./src/GeoCoordinatePortable/GeoCoordinatePortable.csproj"
+    !! "./src/GeoCoordinate.NetStandard2/GeoCoordinate.NetStandard2*.csproj"
+    |> Fake.MSBuild.ProjectSystem.FixProjectFiles "./src/GeoCoordinate.NetStandard2/GeoCoordinate.NetStandard2.csproj"
 )
 
 let setParams defaults = {
@@ -73,12 +73,12 @@ Target "BuildApp" (fun _ ->
         |> DoNothing
 )
 
-Target "BuildMono" (fun _ ->
-    // xbuild does not support msbuild  tools version 14.0 and that is the reason
-    // for using the xbuild command directly instead of using msbuild
-    Exec "xbuild" "./src/GeoCoordinatePortable.sln /t:Build /tv:12.0 /v:m  /p:RestorePackages='False' /p:Configuration='Release' /logger:Fake.MsBuildLogger+ErrorLogger,'../src/GeoCoordinatePortable.net/tools/FAKE.Core/tools/FakeLib.dll'"
+//Target "BuildMono" (fun _ ->
+//    // xbuild does not support msbuild  tools version 14.0 and that is the reason
+//    // for using the xbuild command directly instead of using msbuild
+//    Exec "xbuild" "./src/GeoCoordinatePortable.sln /t:Build /tv:12.0 /v:m  /p:RestorePackages='False' /p:Configuration='Release' /logger:Fake.MsBuildLogger+ErrorLogger,'../src/GeoCoordinatePortable.net/tools/FAKE.Core/tools/FakeLib.dll'"
 
-)
+//)
 
 // Target "UnitTests" (fun _ ->
 //     !! (sprintf "./src/GeoCoordinatePortable.Tests/bin/%s/**/GeoCoordinatePortable.Tests*.dll" buildMode)
@@ -88,10 +88,10 @@ Target "BuildMono" (fun _ ->
 // )
 
 Target "SourceLink" (fun _ ->
-    [ "./src/GeoCoordinatePortable/GeoCoordinatePortable.csproj" ]
+    [ "./src/GeoCoordinate.NetStandard2/GeoCoordinate.NetStandard2.csproj" ]
     |> Seq.iter (fun pf ->
         let proj = VsProj.LoadRelease pf
-        let url = "https://raw.githubusercontent.com/ghuntley/GeoCoordinatePortable/{0}/%var2%"
+        let url = "https://raw.githubusercontent.com/charlesRollandy/GeoCoordinate.NetStandard2/{0}/%var2%"
         SourceLink.Index proj.Compiles proj.OutputFilePdb __SOURCE_DIRECTORY__ url
     )
 )
@@ -100,9 +100,9 @@ Target "CreateGeoCoordinatePortablePackage" (fun _ ->
     let portableDir = packagingDir @@ "lib/portable-net45+wp80+win+wpa81/"
     CleanDirs [portableDir]
 
-    CopyFile portableDir (buildDir @@ "Release/GeoCoordinatePortable.dll")
-    CopyFile portableDir (buildDir @@ "Release/GeoCoordinatePortable.XML")
-    CopyFile portableDir (buildDir @@ "Release/GeoCoordinatePortable.pdb")
+    CopyFile portableDir (buildDir @@ "Release/GeoCoordinate.NetStandard2.dll")
+    CopyFile portableDir (buildDir @@ "Release/GeoCoordinate.NetStandard2.XML")
+    CopyFile portableDir (buildDir @@ "Release/GeoCoordinate.NetStandard2.pdb")
     CopyFiles packagingDir ["LICENSE.md"; "README.md"; "RELEASENOTES.md"]
 
     NuGet (fun p -> 
